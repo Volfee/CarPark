@@ -4,7 +4,8 @@ import Cars.Car;
 
 public class RegularSpace extends AbstractParkingSpace {
 
-    public Car car;
+    protected Car car;
+    private String type = "regular";
 
     public RegularSpace(int distance) {
         this.car = null;
@@ -35,11 +36,21 @@ public class RegularSpace extends AbstractParkingSpace {
         return car;
     }
 
+    @Override
+    public String checkType() {
+        return type;
+    }
+
     /** Compares to parking spaces where parking space closer to entrance is considered better. */
     @Override
     public int compareTo(Object o) {
         AbstractParkingSpace p = (AbstractParkingSpace) o;
         return (p.distanceFromEntrance - this.distanceFromEntrance) * - 1;
+    }
+
+    @Override
+    public boolean canFit(Car car) {
+        return true;
     }
 
     @Override

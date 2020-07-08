@@ -1,13 +1,14 @@
 package Cars;
 
 public class RegularCar implements Car {
-    private int id;
-    private int timeLeft; // hours spend in shopping
-    private String type = "regular";
+    int id;
+    int timeLeft; // hours spend in shopping
+    String type;
 
     public RegularCar(int timeLeft) {
         this.id = RegularCar.newId();
         this.timeLeft = timeLeft;
+        this.type = "regular";
     }
 
     @Override

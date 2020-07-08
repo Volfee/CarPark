@@ -9,4 +9,5 @@ public interface ParkingSpace extends Comparable {
     boolean isEmpty();
     Car peekCar();
     int compareTo(Object o);
-};
+    boolean canFit(Car car);
+}
